@@ -18,9 +18,7 @@ const createUser: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (eve
   try {
     const createUserUseCase = makeCreateUserUseCase();
     const createUserUseCaseResult = await createUserUseCase.handle({ id, email, password });
-    return formatJSONResponse({
-      createUserUseCaseResult
-    }, 201)
+    return formatJSONResponse(createUserUseCaseResult, 201)
   } catch (error: any) {
     return formatJSONResponse({
       message: error.message

@@ -5,7 +5,7 @@ import schema from "./schema";
 
 const login: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   const { email, password } = event.body;
-  console.log(process.env)
+
   const loginUseCase = makeLoginUseCase()
   const loginResult = await loginUseCase.handle(email, password)
 
@@ -13,9 +13,7 @@ const login: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) =
     message: "Invalid credentials"
   }, 401)
 
-  return formatJSONResponse({
-    loginResult
-  }, 200);
+  return formatJSONResponse(loginResult, 200);
 }
 
 export const main = middyfy(login);
