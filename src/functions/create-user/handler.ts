@@ -22,7 +22,6 @@ const createUser: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (eve
       message: error.message
     }, 400);
   }
-
 }
 
 export const main = middyfy(createUser);
