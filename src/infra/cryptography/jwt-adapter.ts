@@ -11,7 +11,7 @@ export class JwtAdapter implements Encrypter, TokenVerifier {
 
   verify(token: string): boolean {
     try {
-      const isValid = verify(token, this.secret);
+      verify(token, this.secret);
       return true;
     } catch (error) {
       return false;

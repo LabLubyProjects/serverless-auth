@@ -13,8 +13,10 @@
     "@middy/core": "^2.5.3",
     "@middy/http-json-body-parser": "^2.5.3",
     "@prisma/client": "4.2.1",
+    "@types/validator": "^13.7.6",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",

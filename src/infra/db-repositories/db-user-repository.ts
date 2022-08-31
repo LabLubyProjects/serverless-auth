@@ -5,12 +5,20 @@ import { prismaClient } from "./prisma";
 
 export class DbUserRepository implements UserRepository {
   async findByEmail(email: string): Promise<UserModel | null> {
-    const user = await prismaClient.user.findUnique({
+    const prismaUser = await prismaClient.user.findUnique({
       where: { email: email }
     })
+    
+    if(!prismaUser) return null
+    
+    return mapPrismaUserToDomainUserModel(prismaUser)
+  }
 
-    if(!user) return null
+  async create(user: UserModel): Promise<UserModel> {
+    const prismaUser = await prismaClient.user.create({
+      data: user
+    });
 
-    return mapPrismaUserToDomainUserModel(user)
+    return mapPrismaUserToDomainUserModel(prismaUser);
   }
 }
