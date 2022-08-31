@@ -1,7 +1,7 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
 import login from '@functions/login';
+import verifyToken from '@functions/verify-token';
 
 const serverlessConfiguration: AWS = {
   service: 'auth',
@@ -21,7 +21,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello, login },
+  functions: { login, verifyToken },
   package: { individually: true },
   custom: {
     esbuild: {
