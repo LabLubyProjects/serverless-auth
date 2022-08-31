@@ -7,5 +7,5 @@ export interface Encrypter {
 }
 
 export interface TokenVerifier {
-  verify(value: string): boolean;
+  verify(token: string): boolean;
 }
