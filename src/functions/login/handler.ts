@@ -5,7 +5,7 @@ import schema from "./schema";
 
 const login: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   const { email, password } = event.body;
-
+  console.log(process.env)
   const loginUseCase = makeLoginUseCase()
   const loginResult = await loginUseCase.handle(email, password)
 

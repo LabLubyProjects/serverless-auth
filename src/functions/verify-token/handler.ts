@@ -5,7 +5,7 @@ import schema from "./schema";
 
 const verifyToken: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   const { token } = event.body;
-
+  console.log(process.env)
   const verifyTokenUseCase = makeVerifyTokenUseCase();
   const verifyTokenUseCaseResult = verifyTokenUseCase.handle(token);
 

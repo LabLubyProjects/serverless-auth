@@ -7,8 +7,12 @@ import validator from "validator";
 const createUser: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   const { id, email, password } = event.body;
 
+  if(!validator.isUUID(id)) return formatJSONResponse({
+    message: "ID deve ser um UUID"
+  }, 400);
+
   if(!validator.isEmail(email)) return formatJSONResponse({
-    message: "Invalid email"
+    message: "Email inválido"
   }, 400);
 
   try {
