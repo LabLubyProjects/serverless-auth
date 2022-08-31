@@ -9,9 +9,13 @@ const login: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) =
   const loginUseCase = makeLoginUseCase()
   const loginResult = await loginUseCase.handle(email, password)
 
+  if(!loginResult) return formatJSONResponse({
+    message: "Invalid credentials"
+  }, 401)
+
   return formatJSONResponse({
-    email, password
-  });
+    loginResult
+  }, 200);
 }
 
 export const main = middyfy(login);
