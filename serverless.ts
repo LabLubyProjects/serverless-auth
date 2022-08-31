@@ -7,7 +7,7 @@ import createUser from '@functions/create-user';
 const serverlessConfiguration: AWS = {
   service: 'auth',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-offline'],
   useDotenv: true,
   provider: {
     name: 'aws',
