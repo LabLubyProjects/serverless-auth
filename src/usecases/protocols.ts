@@ -5,3 +5,7 @@ export interface HashComparer {
 export interface Encrypter {
   encrypt(value: any): string;
 }
+
+export interface TokenVerifier {
+  verify(value: string): boolean;
+}
