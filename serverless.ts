@@ -19,8 +19,8 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
-      DATABASE_URL: "mysql://admin:msauth123@ms-auth.cythfknuyjvl.us-east-1.rds.amazonaws.com:3306/auth",
-      JWT_SECRET: "5ebe2294ecd0e0f08eab7690d2a6ee69"
+      DATABASE_URL: '${env:DATABASE_URL}',
+      JWT_SECRET: '${env:JWT_SECRET}'
     },
   },
   // import the function via paths
