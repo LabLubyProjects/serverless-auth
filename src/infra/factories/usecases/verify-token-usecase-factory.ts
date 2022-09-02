@@ -1,4 +1,4 @@
-import { VerifyTokenUseCase } from "src/usecases/verify-token/verify-token-use-case";
+import { VerifyTokenUseCase } from "../../../usecases/verify-token/verify-token-use-case";
 import { makeJwtAdapter } from "../cryptography/jwt-adapter-factory";
 
 export const makeVerifyTokenUseCase = (): VerifyTokenUseCase => {

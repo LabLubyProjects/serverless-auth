@@ -1,5 +1,5 @@
-import { Encrypter, TokenVerifier } from "src/usecases/protocols";
 import { sign, verify } from 'jsonwebtoken'
+import { Encrypter, TokenVerifier } from '../../usecases/protocols';
 
 export class JwtAdapter implements Encrypter, TokenVerifier {
   constructor(private readonly secret: string) {}
