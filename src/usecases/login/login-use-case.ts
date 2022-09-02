@@ -1,4 +1,4 @@
-import { UserRepository } from "src/domain/users/user-repository";
+import { UserRepository } from "../../domain/users/user-repository";
 import { Encrypter, HashComparer } from "../protocols";
 import { LoginOutput } from "./login-io";
 

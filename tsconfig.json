@@ -1,25 +1,25 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "lib": ["es2021"],
     "moduleResolution": "node",
+    "module": "ESNext",
+    "declaration": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
     "sourceMap": true,
-    "target": "ES2020",
-    "outDir": "lib",
-    "strict": true
+    "target": "ES2021",
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib"
   },
-  "include": ["src/**/*.ts", "serverless.ts"],
+  "include": ["src/**/*.ts", "handler.ts", "main.ts"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
     ".webpack/**/*",
     "_warmup/**/*",
     ".vscode/**/*"
-  ],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  ]
 }
