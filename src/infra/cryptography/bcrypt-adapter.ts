@@ -1,12 +1,12 @@
-import { compare } from "bcryptjs"
+import * as bcryptjs from "bcryptjs"
 import { HashComparer } from "../../usecases/protocols";
 
 export class BcryptAdapter implements HashComparer {
 
-  constructor(private readonly salt: number) {}
+  constructor() {}
 
   async compare(firstValue: string, secondValue: string): Promise<boolean> {
-    const isValid = await compare(firstValue, secondValue);
+    const isValid = await bcryptjs.compare(firstValue, secondValue);
     return isValid;
   }
 }

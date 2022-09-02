@@ -6,4 +6,4 @@ jspm_packages
 .serverless
 .env
 # esbuild directories
-.esbuild
+.build

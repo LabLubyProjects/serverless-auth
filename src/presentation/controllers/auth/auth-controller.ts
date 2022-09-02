@@ -26,7 +26,7 @@ export class AuthController {
   
     return {
       statusCode: 200,
-      body: verifyTokenUseCase
+      body: verifyTokenUseCaseResult
     }
   }
 }
