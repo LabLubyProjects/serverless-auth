@@ -1,4 +1,4 @@
-import * as bcryptjs from "bcryptjs"
+import bcryptjs from "bcryptjs"
 import { HashComparer } from "../../usecases/protocols";
 
 export class BcryptAdapter implements HashComparer {

@@ -9,3 +9,11 @@ export interface Encrypter {
 export interface TokenVerifier {
   verify(token: string): boolean;
 }
+
+export interface TokenDecoder {
+  decode(token: string): any;
+}
+
+export interface DecodedWithID {
+  id: string;
+}

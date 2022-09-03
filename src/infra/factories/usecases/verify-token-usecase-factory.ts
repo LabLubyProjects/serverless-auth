@@ -2,6 +2,7 @@ import { VerifyTokenUseCase } from "../../../usecases/verify-token/verify-token-
 import { makeJwtAdapter } from "../cryptography/jwt-adapter-factory";
 
 export const makeVerifyTokenUseCase = (): VerifyTokenUseCase => {
-  const verifyTokenUseCase: VerifyTokenUseCase = new VerifyTokenUseCase(makeJwtAdapter());
+  const jwt = makeJwtAdapter();
+  const verifyTokenUseCase: VerifyTokenUseCase = new VerifyTokenUseCase(jwt, jwt);
   return verifyTokenUseCase;
 }

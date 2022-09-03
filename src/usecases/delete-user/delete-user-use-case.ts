@@ -7,7 +7,7 @@ export class DeleteUserUseCase {
     const user = await this.userRepository.findByID(id);
 
     if(!user) return null;
-    
+
     await this.userRepository.delete(id);
   }
 }
